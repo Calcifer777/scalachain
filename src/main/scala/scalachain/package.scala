@@ -9,7 +9,7 @@ package object utils {
 
   def hashToString(arr: Array[Byte]): String =
     if (arr.length == 0) ""
-    else String.format("%032x", new BigInteger(1, arr))
+    else String.format("%064x", new BigInteger(1, arr))
 
   def bytesToString(arr: Array[Byte]): String =
     new String(arr)

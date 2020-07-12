@@ -5,6 +5,9 @@ import java.nio.ByteBuffer
 import scalachain.{BlockChain, Block}
 import scalachain.utils._
 
+import com.typesafe.config.ConfigFactory
+
+
 object Main extends App {
 
   implicit def stringToBytes(s: String): Array[Byte] = 
@@ -19,5 +22,6 @@ object Main extends App {
     println(s"Data: ${new String(b.data)}")
     println("\n")
   })
+
 
 }
