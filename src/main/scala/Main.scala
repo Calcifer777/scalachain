@@ -1,9 +1,23 @@
-import Block._
+import scala.language.implicitConversions
+import java.nio.charset.StandardCharsets
+import java.nio.ByteBuffer
+
+import scalachain.{BlockChain, Block}
+import scalachain.utils._
 
 object Main extends App {
-  val timestamp: Long = System.currentTimeMillis
-  val data = "ciao sono marco"
-  val hash = getHash(timestamp: Long, Array[Byte](), data.getBytes)
-  println("")
-  println(hash)
+
+  implicit def stringToBytes(s: String): Array[Byte] = 
+    s.getBytes(StandardCharsets.UTF_8)
+
+  val blockChain = BlockChain()
+  blockChain.addBlock("Send 1 BTC to Ivan")
+  blockChain.addBlock("Send 2 more BTC to Ivan")
+  blockChain.blocks.foreach({ b: Block => 
+    println(s"Hash: ${hashToString(b.hash)}")
+    println(s"Previous Hash: ${hashToString(b.prevBlockHash)}")
+    println(s"Data: ${new String(b.data)}")
+    println("\n")
+  })
+
 }
