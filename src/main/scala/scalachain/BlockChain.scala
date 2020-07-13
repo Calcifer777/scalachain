@@ -1,6 +1,5 @@
 package scalachain
 
-
 import scala.collection.mutable.ArrayBuffer
 
 class BlockChain(val blocks: ArrayBuffer[Block]) {
