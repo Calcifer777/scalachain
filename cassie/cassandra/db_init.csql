@@ -1,0 +1,18 @@
+
+CREATE KEYSPACE phantom
+WITH replication = {
+  'class': 'SimpleStrategy',
+  'replication_factor' : 1
+};
+
+DESCRIBE keyspaces;
+
+USE phantom;
+
+CREATE TABLE users (
+   id uuid PRIMARY KEY,
+   username text,
+   email text
+);
+
+DESCRIBE tables;

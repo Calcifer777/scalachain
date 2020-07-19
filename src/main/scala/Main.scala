@@ -2,8 +2,8 @@ import scala.language.implicitConversions
 import java.nio.charset.StandardCharsets
 import java.nio.ByteBuffer
 
-import scalachain.{BlockChain, MessageBlock}
-import scalachain.utils._
+import com.calcifer.scalachain.{BlockChain, MessageBlock}
+import com.calcifer.scalachain.utils._
 
 import com.typesafe.config.ConfigFactory
 
